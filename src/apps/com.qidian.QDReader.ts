@@ -159,10 +159,25 @@ export default defineGkdApp({
     {
       key: 12,
       name: '功能类-福利中心看完广告-知道了',
-      desc: '点击[知道了]',
+      fastQuery: true,
+      matchRoot: true,
+      matchDelay: 400,
+      snapshotUrls: 'https://i.gkd.li/i/22909666',
       rules: [
         {
-          fastQuery: true,
+          key: 0,
+          activityIds: '.ui.activity.QDBrowserActivity',
+          matches:
+            '@TextView[text$="知道了"] < [index=parent.childCount.minus(1)] <n View < View - [id="app"] <<4 [vid="webViewContainer"]',
+        },
+        {
+          key: 1,
+          preKeys: [0],
+          action: 'click',
+          matches: ['[text="激励任务"]', '[text="去完成"]'],
+        },
+        {
+          key: 2,
           activityIds: '.ui.activity.QDBrowserActivity',
           matches:
             '@TextView[childCount=0][text$="知道了"][visibleToUser=true] <<n [id="com.qidian.QDReader:id/webViewContainer"]',
@@ -230,6 +245,31 @@ export default defineGkdApp({
           matches:
             '@View[id=null][childCount=0][clickable=true] < View < View < WebView[text="福利中心"] < WebView < FrameLayout < [vid="webViewContainer"]',
           snapshotUrls: 'https://i.gkd.li/i/24012947',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '功能类-福利广告-奖励完成后自动关闭',
+      activityIds: 'com.qq.e.tg.RewardvideoPortraitADActivity',
+      rules: [
+        {
+          key: 0,
+          action: 'none',
+          matches: '[text="恭喜获得奖励"]',
+        },
+        {
+          key: 1,
+          preKeys: [0],
+          action: 'click',
+          matches: '[id^="button_close_"][clickable=true][visibleToUser=true]',
+          actionCd: 500,
+          actionMaximum: 10,
+        },
+        {
+          key: 2,
+          action: 'click',
+          matches: 'ImageView[clickable=true][index=2][left<200][top<400]',
         },
       ],
     },

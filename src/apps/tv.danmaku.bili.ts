@@ -574,5 +574,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 23,
+      name: '全屏广告-视频暂停页广告',
+      desc: '点击右上角关闭按钮',
+      fastQuery: true,
+      activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+      rules: [
+        {
+          matches: '@[clickable=true] > [desc="关闭暂停页"]',
+        },
+      ],
+    },
   ],
 });

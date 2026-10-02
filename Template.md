@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/shao-deng/GKD/main/dist/shao-deng_gkd.json5
 - 订阅 ID：`161324821`
 - 作者：`shao-deng`
 - 当前版本：v--VERSION--
-- 已适配 886 个应用，共有 2075 个应用规则组和 3 个全局规则组
+- 已适配 886 个应用，共有 2076 个应用规则组和 3 个全局规则组
 - [查看适配 APP 列表](./dist/README.md)
 - [反馈问题](https://github.com/shao-deng/GKD/issues/new/choose)
 

@@ -147,7 +147,13 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/24541094',
         },
         {
-          preKeys: [0, 1, 2, 3, 4, 5],
+          key: 6,
+          activityIds: '.pb.pb.main.PbActivity',
+          matches:
+            '@FrameLayout[clickable=true][childCount=1][visibleToUser=true] < RelativeLayout[childCount=3] < LinearLayout[childCount=2] >n [text="广告"]',
+        },
+        {
+          preKeys: [0, 1, 2, 3, 4, 5, 6],
           activityIds: [
             '.tblauncher.MainTabActivity',
             '.pb.pb.main.PbActivity',

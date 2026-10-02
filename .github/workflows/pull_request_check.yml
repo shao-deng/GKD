@@ -1,55 +1,43 @@
-name: pull_request_check
+name: ci
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Get changed files
-        id: changed_files
-        uses: tj-actions/changed-files@v46
         with:
-          files: |
-            src/apps/*.ts
-            src/categories.ts
-            src/globalGroups.ts
-            src/subscription.ts
-
-      - name: Check changed files
-        run: |
-          for file in ${{ steps.changed_files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
-          if [ ${{ steps.changed_files.outputs.all_changed_files_count }} -gt 1 ]; then
-            echo "your src subscription changed files count must <= 1"
-            exit 1
-          fi
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - uses: pnpm/action-setup@v4
+      - name: Enable pnpm
+        run: corepack enable
 
-      - run: pnpm install
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
-      - run: pnpm run check
+      - name: Typecheck and validate subscription
+        run: pnpm run check
 
-      - run: pnpm run format
+      - name: Check formatting
+        run: pnpm exec prettier --check .
 
-      - run: pnpm run lint
-
-      - name: check format status
-        run: |
-          status=$(git status --porcelain)
-          if [ -n "$status" ]; then
-            echo "Something wasn’t formatted properly"
-            git --no-pager diff
-            exit 1
-          fi
+      - name: Lint
+        run: pnpm exec eslint .

@@ -77,6 +77,7 @@ export default defineGkdApp({
         },
         {
           key: 3,
+          fastQuery: true,
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
             '@ImageView[desc="关闭"][clickable=true] <n RelativeLayout - RelativeLayout >3 ImageView[desc="快捷入口"]',
@@ -84,6 +85,7 @@ export default defineGkdApp({
         },
         {
           key: 4,
+          fastQuery: true,
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
             '@ImageView[width<100 && height<100][clickable=true] - TextView[text!=null] <n * + * >3 ImageView[desc="快捷入口"]',

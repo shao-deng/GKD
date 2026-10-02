@@ -268,6 +268,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
+          preKeys: [0],
           action: 'click',
           matches: 'ImageView[clickable=true][index=2][left<200][top<400]',
         },

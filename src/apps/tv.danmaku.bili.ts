@@ -280,6 +280,7 @@ export default defineGkdApp({
       name: '全屏广告-会员弹窗',
       desc: '点击关闭',
       fastQuery: true,
+      matchTime: 10000,
       actionMaximum: 1,
       forcedTime: 10000,
       rules: [
@@ -582,6 +583,7 @@ export default defineGkdApp({
       activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
       rules: [
         {
+          fastQuery: true,
           matches: '@[clickable=true] > [desc="关闭暂停页"]',
         },
       ],

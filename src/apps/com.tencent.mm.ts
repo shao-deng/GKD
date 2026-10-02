@@ -253,6 +253,7 @@ export default defineGkdApp({
       key: 7,
       name: '功能类-自动选中发送原图',
       desc: '自动选中底部中间的发送原图，可手动取消勾选',
+      matchTime: 10000,
       actionMaximum: 1,
       activityIds: [
         '.plugin.gallery.ui.AlbumPreviewUI',
@@ -442,6 +443,7 @@ export default defineGkdApp({
       desc: '点击关闭',
       rules: [
         {
+          fastQuery: true,
           activityIds:
             '.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
           matches:
@@ -540,6 +542,8 @@ export default defineGkdApp({
       key: 30,
       name: '全屏广告-文档页面-腾讯文档APP弹窗',
       desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
       rules: [
         {
           fastQuery: true,
@@ -561,6 +565,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
+          fastQuery: true,
           matches:
             'View > Button > View[desc$="推​荐​"] > ImageView[index=1][clickable=true][visibleToUser=true]',
           exampleUrls:

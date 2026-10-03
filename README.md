@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/shao-deng/GKD/main/dist/shao-deng_gkd.json5
 
 - 订阅 ID：`161324821`
 - 作者：`shao-deng`
-- 当前版本：v8
+- 当前版本：v9
 - 已适配 886 个应用，共有 2076 个应用规则组和 3 个全局规则组
 - [查看适配 APP 列表](./dist/README.md)
 - [反馈问题](https://github.com/shao-deng/GKD/issues/new/choose)
@@ -44,4 +44,4 @@ https://raw.githubusercontent.com/shao-deng/GKD/main/dist/shao-deng_gkd.json5
 
 感谢 AIsouler 与所有历史贡献者建立并维护这些规则。接管后的修改不改变历史贡献的归属。
 
-![Contributors](https://contrib.rocks/image?repo=AIsouler/GKD_subscription&_v=8)
+![Contributors](https://contrib.rocks/image?repo=AIsouler/GKD_subscription&_v=9)

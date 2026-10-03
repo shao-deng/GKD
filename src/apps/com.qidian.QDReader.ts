@@ -266,7 +266,8 @@ export default defineGkdApp({
       activityIds: 'com.qq.e.tg.RewardvideoPortraitADActivity',
       snapshotUrls: 'https://i.gkd.li/i/32996616',
       matchRoot: true,
-      forcedTime: 15000,
+      matchDelay: 15000,
+      forcedTime: 5000,
       rules: {
         action: 'clickCenter',
         matches:

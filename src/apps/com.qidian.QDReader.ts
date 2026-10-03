@@ -256,7 +256,7 @@ export default defineGkdApp({
       rules: {
         action: 'click',
         matches:
-          '[text="恭喜获得奖励"] < View +2 @ToggleButton[id^="button_close_"][clickable=true][visibleToUser=true]',
+          '[text="恭喜获得奖励"] <2 View > @ToggleButton[id^="button_close_"][clickable=true][visibleToUser=true]',
         actionCd: 500,
         actionMaximum: 3,
       },

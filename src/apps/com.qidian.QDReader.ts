@@ -252,27 +252,13 @@ export default defineGkdApp({
       key: 16,
       name: '功能类-福利广告-奖励完成后自动关闭',
       activityIds: 'com.qq.e.tg.RewardvideoPortraitADActivity',
-      rules: [
-        {
-          key: 0,
-          action: 'none',
-          matches: '[text="恭喜获得奖励"]',
-        },
-        {
-          key: 1,
-          preKeys: [0],
-          action: 'click',
-          matches: '[id^="button_close_"][clickable=true][visibleToUser=true]',
-          actionCd: 500,
-          actionMaximum: 10,
-        },
-        {
-          key: 2,
-          preKeys: [0],
-          action: 'click',
-          matches: 'ImageView[clickable=true][index=2][left<200][top<400]',
-        },
-      ],
+      rules: {
+        action: 'click',
+        matches:
+          'ToggleButton[id^="button_close_"][clickable=true][visibleToUser=true]',
+        actionCd: 500,
+        actionMaximum: 3,
+      },
     },
   ],
 });

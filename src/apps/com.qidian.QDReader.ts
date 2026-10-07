@@ -276,5 +276,19 @@ export default defineGkdApp({
         actionMaximum: 3,
       },
     },
+    {
+      key: 18,
+      name: '功能类-福利广告-提前结束页自动关闭',
+      activityIds: 'com.qq.e.tg.RewardvideoPortraitADActivity',
+      matchRoot: true,
+      matchTime: 15000,
+      forcedTime: 15000,
+      rules: {
+        action: 'clickCenter',
+        matches:
+          '@ImageView[clickable=true][visibleToUser=true][left<200][top<400][width<200][height<200]',
+        actionMaximum: 1,
+      },
+    },
   ],
 });
